@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
-            $table->string('attendance_id', 100);
+            $table->string('employee_id');
+            $table->string('attendance_id', 100)->unique();
             $table->timestamp('clock_in')->nullable();
             $table->timestamp('clock_out')->nullable();
+            $table->foreign('employee_id')->references('employee_id')->on('employees')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

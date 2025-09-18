@@ -15,9 +15,9 @@ class AttendancesTable
     {
         return $table
             ->columns([
-                SelectColumn::make('employess.name')
+                TextColumn::make('employee.name')
                 ->label('Employee'),
-                TextColumn::make('attendace_id')
+                TextColumn::make('attendance_id')
                 ->label('Attendance ID'),
                 TextColumn::make('clock_in')
                 ->label('Clock IN'),

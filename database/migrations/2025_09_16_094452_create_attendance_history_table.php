@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('attendance_history', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
-            $table->foreignId('attendance_id')->constrained('attendances')->onDelete('cascade');
+            $table->string('attendance_id');
+            $table->string('employee_id');
             $table->timestamp('date_attendance');
             $table->tinyInteger('attendance_type');
             $table->text('description');
+            $table->foreign('attendance_id')->references('attendance_id')->on('attendances')->onDelete('cascade');
+            $table->foreign('employee_id')->references('employee_id')->on('employees')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -17,11 +17,11 @@ class attendanceHistory extends Model
 
     public function employee()
     {
-        return $this->belongsTo(employee::class, 'employee_id');
+        return $this->belongsTo(employee::class, 'employee_id','employee_id');
     }
 
     public function attendance()
     {
-        return $this->belongsTo(attendance::class, 'attendance_id');
+        return $this->belongsTo(attendance::class, 'attendance_id','attendance_id');
     }
 }

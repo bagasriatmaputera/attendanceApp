@@ -15,7 +15,7 @@ class attendance extends Model
 
     public function employee()
     {
-        return $this->belongsTo(employee::class,'employee_id');
+        return $this->belongsTo(employee::class,'employee_id','employee_id');
     }
     public function attendanceHistory()
     {

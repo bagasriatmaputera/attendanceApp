@@ -87,17 +87,8 @@ mysql -u root -p attendance_app < attendance_app.sql
 
 ---
 
-## 6. Migrasi & Seeder (jika belum ada DB)
 
-```bash
-php artisan migrate --seed
-```
-
-Seeder akan membuat role, admin, dan data awal.
-
----
-
-## 7. Login ke Filament Admin
+## 6. Login ke Filament Admin
 
 Jalankan server:
 
@@ -120,7 +111,7 @@ Password: password
 
 ---
 
-## 8. API Routes (Autentikasi & Attendance)
+## 7. API Routes (Autentikasi & Attendance)
 
 Semua endpoint di-protect `auth:sanctum`.
 
@@ -135,7 +126,7 @@ Semua endpoint di-protect `auth:sanctum`.
 
 ---
 
-## 9. Jalankan Backend
+## 8. Jalankan Backend
 
 ```bash
 php artisan serve
@@ -146,7 +137,7 @@ Default jalan di:
 
 ---
 
-## 10. Troubleshooting
+## 9. Troubleshooting
 
 * Jika **CORS error** saat akses dari React → cek `config/cors.php` (gunakan `*` untuk dev).
 * Jika error **vendor not found** → pastikan `composer install` sudah jalan.
